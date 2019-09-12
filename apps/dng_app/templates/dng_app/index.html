@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="A really cool site!">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dng_app/css/style.css' %}">
+
+    <!-- <style>
+        body {
+            background-image: url({% static 'dng_app/images/green-gold.jpg' %})
+
+        }
+    </style> -->
+
+</head>
+
+<body>
+    <div class="mt-5">
+        <div class="container mt-2">
+            <div class="text-left">
+                <h5>Your Gold: <span
+                        class="white border rounded border-dark px-5 py-1">{{ request.session.gold }}</span>
+                </h5>
+            </div>
+            <div class="mt-5">
+                <div class="row">
+                    <div class="col-sm-3 overlay">
+                        <div class="card border border-dark">
+                            <!-- <div class="overlay"> -->
+                                <div class="card-body text-center">
+                                    <h4 class="card-title">Farm</h4>
+                                    <p class="card-text">(earns 10-20 golds)</p>
+                                    <form action="/process_money" method='post'>
+                                        {% csrf_token %}
+                                        <input type="hidden" name="structure" value="farm">
+                                        <button type="submit" class="btn btn-warning border-dark">Find
+                                            Gold!</button>
+                                    </form>
+                                </div>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card border border-dark">
+                            <div class="card-body text-center">
+                                <h4 class="card-title">Cave</h4>
+                                <p class="card-text">(earns 5-10 golds)</p>
+                                <form action="/process_money" method='post'>
+                                    {% csrf_token %}
+                                    <input type="hidden" name="structure" value="cave">
+                                    <button type="submit" class="btn btn-warning border-dark">Find
+                                        Gold!</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card border border-dark">
+                            <div class="card-body text-center">
+                                <h4 class="card-title">House</h4>
+                                <p class="card-text">(earns 2-5 golds)</p>
+                                <form action="/process_money" method='post'>
+                                    {% csrf_token %}
+                                    <input type="hidden" name="structure" value="house">
+                                    <button type="submit" class="btn btn-warning border-dark">Find
+                                        Gold!</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card border border-dark">
+                            <div class="card-body text-center">
+                                <h4 class="card-title">Casino</h4>
+                                <p class="card-text">(earns/takes 0-50 golds)</p>
+                                <form action="/process_money" method='post'>
+                                    {% csrf_token %}
+                                    <input type="hidden" name="structure" value="casino">
+                                    <button type="submit" class="btn btn-warning border-dark">Find
+                                        Gold!</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h5>Activities:</h5>
+                    <div class="card border border-dark">
+                        <div class="card-body">
+                            <ul class="border-dark scroll">
+                                {{request.session.activities|safe}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

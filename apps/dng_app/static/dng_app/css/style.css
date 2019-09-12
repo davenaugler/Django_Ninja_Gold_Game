@@ -1,0 +1,71 @@
+.border {
+    border-width: 1px !important;
+    box-shadow: 6px 6px 20px #3D513E;
+
+}
+
+body {
+    background-image: url('/static/dng_app/images/green-gold.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h5{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 35px;
+    color: #3D513E;
+    font-weight: 800;
+    text-shadow: 8px 8px 10px #fff;
+}
+
+h4 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: #678B47;
+    font-weight: 800;
+    text-shadow: 5px 5px 10px #fff;
+}
+
+/* ****************************************************************************************** */
+/* Trying to get images into the cards with a css gradient overlay.
+Still working on that right here. 
+https://flatuicolors.com/palette/defo
+*/
+
+/* .overlay {
+    background: linear-gradient(rgba(52, 73, 94, 0.7), rgba(236, 240, 241, 0.7), url('/static/dng_app/images/money.jpg'));
+    -webkit-background-size: cover;
+    background-size: cover;
+    text-align: center;
+} */
+
+/* .back-farm{
+    background-image: url('/static/dng_app/images/money.jpg');
+    background-size: cover;
+} */
+/* ****************************************************************************************** */
+
+.box-shadow {
+    text-shadow: 5px 5px 10px #000;
+}
+
+.white{
+    background-color: white;
+}
+
+.img{
+    background-image: url(/gold.jpg);
+    background-size: cover;
+}
+
+.img-size {
+    width: 200px;
+    height: auto;
+}
+
+.scroll {
+    height: 300px;
+    overflow: scroll;
+    padding: 10px;
+}
+
